@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userTable>
+	<variable>		
+		<var_name>name</var_name>
+		<var_desc_SWE>Namn</var_desc_SWE>
+		<var_type>VARCHAR(100)</var_type>
+		<var_multiple>FALSE</var_multiple>
+		<var_options>
+			<option>
+                <option_code> </option_code>
+                <option_desc_SWE> </option_desc_SWE>
+            </option>
+            <option>
+                <option_code> </option_code>
+                <option_desc_SWE> </option_desc_SWE>
+            </option>
+		</var_options>
+        <var_ui_type>textfield</var_ui_type>
+	</variable>
+	<variable>		
+		<var_name>genderID</var_name>
+		<var_desc_SWE>Kön</var_desc_SWE>
+		<var_type>INTEGER</var_type>
+		<var_multiple>FALSE</var_multiple>
+		<var_options>
+            <option>
+                <option_code>0</option_code>
+                <option_desc_SWE>Man</option_desc_SWE>
+            </option>
+			<option>
+                <option_code>1</option_code>
+                <option_desc_SWE>Kvinna</option_desc_SWE>
+            </option>
+		</var_options>
+        <var_ui_type>radiobutton</var_ui_type>
+	</variable>
+    <variable>
+		<var_name>birthyear</var_name>
+		<var_desc_SWE>Födelseår</var_desc_SWE>
+		<var_type>INTEGER</var_type>
+		<var_multiple>FALSE</var_multiple>
+		<var_options>
+			<option>
+                <option_code></option_code>
+                <option_desc_SWE></option_desc_SWE>
+            </option>
+		</var_options>
+        <var_ui_type>calender</var_ui_type>
+	</variable>
+    <variable>
+        <var_name>regioncode</var_name>
+        <var_desc_SWE>Region</var_desc_SWE>
+        <var_type>INTEGER</var_type>
+        <var_multiple>FALSE</var_multiple>
+        <var_options>
+            <option>
+                <option_code>1</option_code>
+                <option_desc_SWE>H1 - Stockholm</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>3</option_code>
+                <option_desc_SWE>H3 - Större städer</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>4</option_code>
+                <option_desc_SWE>H4 - Mellanbygd</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>5</option_code>
+                <option_desc_SWE>H5 - Tätbygd</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>6</option_code>
+                <option_desc_SWE>H6 - Glesbygd</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>8</option_code>
+                <option_desc_SWE>H8 - Göteborg</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>9</option_code>
+                <option_desc_SWE>H9 - Malmö</option_desc_SWE>
+            </option>
+        </var_options>
+        <var_ui_type>dropdown</var_ui_type>
+    </variable>
+    <variable>
+		<var_name>adultnum</var_name>
+		<var_desc_SWE>Antal vuxna i hushållet</var_desc_SWE>
+		<var_type>INTEGER</var_type>
+		<var_multiple>FALSE</var_multiple>
+		<var_options>
+            <option>
+                <option_code> </option_code>
+                <option_desc_SWE> </option_desc_SWE>
+            </option>
+        </var_options>
+        <var_ui_type>spincontrol</var_ui_type>
+	</variable>
+    <variable>
+		<var_name>childnum</var_name>
+		<var_desc_SWE>Antal barn i hushållet</var_desc_SWE>
+		<var_type>INTEGER</var_type>
+		<var_multiple>FALSE</var_multiple>
+		<var_options>
+            <option>
+                <option_code> </option_code>
+                <option_desc_SWE> </option_desc_SWE>
+            </option>
+        </var_options>
+        <var_ui_type>spincontrol</var_ui_type>
+	</variable>
+    <variable>
+		<var_name>smallchildren</var_name>
+		<var_desc_SWE>Antal barn under 10 år i hushållet</var_desc_SWE>
+		<var_type>INTEGER</var_type>
+		<var_multiple>FALSE</var_multiple>
+		<var_options>
+            <option>
+                <option_code> </option_code>
+                <option_desc_SWE> </option_desc_SWE>
+            </option>
+        </var_options>
+        <var_ui_type>spincontrol</var_ui_type>
+	</variable>
+    <variable>
+		<var_name>accomodation</var_name>
+		<var_desc_SWE>Typ av boende</var_desc_SWE>
+		<var_type>INTEGER</var_type>
+		<var_multiple>FALSE</var_multiple>
+		<var_options>
+            <option>
+                <option_code>1</option_code>
+                <option_desc_SWE>Hus</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>2</option_code>
+                <option_desc_SWE>Lägenhet</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>3</option_code>
+                <option_desc_SWE>Annat</option_desc_SWE>
+            </option>
+        </var_options>
+        <var_ui_type>dropdown</var_ui_type>
+	</variable>
+    <variable>
+		<var_name>roomnum</var_name>
+		<var_desc_SWE>Antal rum i hemmet</var_desc_SWE>
+		<var_type>INTEGER</var_type>
+		<var_multiple>FALSE</var_multiple>
+		<var_options>
+            <option>
+                <option_code> </option_code>
+                <option_desc_SWE> </option_desc_SWE>
+            </option>
+        </var_options>
+        <var_ui_type>spincontrol</var_ui_type>
+	</variable>
+    <variable>
+        <var_name>vehicleavailable</var_name>
+        <var_desc_SWE>Har du eller någon i hushållet tillgång till bil, motorcykel/moped, båt eller husvagn?</var_desc_SWE>
+        <var_type>INTEGER</var_type>
+        <var_multiple>FALSE</var_multiple>
+        <var_options>
+            <option>
+                <option_code>1</option_code>
+                <option_desc_SWE>Bil</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>2</option_code>
+                <option_desc_SWE>Motorcykel eller moped</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>3</option_code>
+                <option_desc_SWE>Båt</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>4</option_code>
+                <option_desc_SWE>Husvagn</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>5</option_code>
+                <option_desc_SWE>Inget av dessa</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>88</option_code>
+                <option_desc_SWE>Vet ej</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>99</option_code>
+                <option_desc_SWE>Vill ej uppge</option_desc_SWE>
+            </option>
+        </var_options>
+        <var_ui_type>dropdown</var_ui_type>
+    </variable>
+    <variable>
+        <var_name>education</var_name>
+        <var_desc_SWE>Utbildning, nivå.</var_desc_SWE>
+        <var_type>INTEGER</var_type>
+        <var_multiple>FALSE</var_multiple>
+        <var_options>
+            <option>
+                <option_code>0</option_code>
+                <option_desc_SWE>Universitet</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>1</option_code>
+                <option_desc_SWE>3-4 år högskole/komvux-studier</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>2</option_code>
+                <option_desc_SWE>2 år högskole/komvux-studier</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>3</option_code>
+                <option_desc_SWE>9 år grundskola</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>4</option_code>
+                <option_desc_SWE>Ofullständig grundskola</option_desc_SWE>
+            </option>
+        </var_options>
+        <var_ui_type>dropdown</var_ui_type>
+    </variable>
+    <variable>
+		<var_name>occupation</var_name>
+		<var_desc_SWE>Vilken är din huvudsakliga sysselsättning för närvarande?</var_desc_SWE>
+		<var_type>INTEGER</var_type>
+		<var_multiple>FALSE</var_multiple>
+		<var_options>
+            <option>
+                <option_code>1</option_code>
+                <option_desc_SWE>Anställd</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>2</option_code>
+                <option_desc_SWE>Egen Företagare/Medhjälpande Familjemedlem</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>3</option_code>
+                <option_desc_SWE>Jordbrukare/Medhjälpande Familjemedlem</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>4</option_code>
+                <option_desc_SWE>Föräldraledig Från Arbete</option_desc_SWE>
+            </option>
+
+            <option>
+                <option_code>5</option_code>
+                <option_desc_SWE>Tjänstledig Av Annat Skäl</option_desc_SWE>
+            </option>
+
+            <option>
+                <option_code>6</option_code>
+                <option_desc_SWE>Studerande</option_desc_SWE>
+            </option>
+
+            <option>
+                <option_code>7</option_code>
+                <option_desc_SWE>Värnpliktig</option_desc_SWE>
+            </option>
+
+            <option>
+                <option_code>8</option_code>
+                <option_desc_SWE>Hemarbetande/Sköter Eget Hushåll</option_desc_SWE>
+            </option>
+
+            <option>
+                <option_code>9</option_code>
+                <option_desc_SWE>Har Sjukersättning/Aktivitetsersättning (F.D. Förtidspensionering)</option_desc_SWE>
+            </option>
+
+            <option>
+                <option_code>10</option_code>
+                <option_desc_SWE>Arbetslös/Arbetssökande/Väntar På Arbete</option_desc_SWE>
+            </option>
+
+            <option>
+                <option_code>11</option_code>
+                <option_desc_SWE>Pensionerad (Ålders-/Avtalspension)</option_desc_SWE>
+            </option>
+
+            <option>
+                <option_code>12</option_code>
+                <option_desc_SWE>Annat</option_desc_SWE>
+            </option>
+
+            <option>
+                <option_code>88</option_code>
+                <option_desc_SWE>Vet inte</option_desc_SWE>
+            </option>
+
+            <option>
+                <option_code>99</option_code>
+                <option_desc_SWE>Vill ej uppge</option_desc_SWE>
+            </option>
+        </var_options>
+        <var_ui_type>dropdown</var_ui_type>
+	</variable>
+    <variable>
+		<var_name>workinghours</var_name>
+		<var_desc_SWE>Hur många timmar arbetar du i snitt per vecka?</var_desc_SWE>
+		<var_type>INTEGER</var_type>
+		<var_multiple>FALSE</var_multiple>
+		<var_options>
+            <option>
+                <option_code> </option_code>
+                <option_desc_SWE> </option_desc_SWE>
+            </option>
+        </var_options>
+        <var_ui_type>spincontrol</var_ui_type>
+	</variable>
+    <variable>
+		<var_name>health</var_name>
+		<var_desc_SWE>Hur upplever du att din hälsa är?</var_desc_SWE>
+		<var_type>INTEGER</var_type>
+		<var_multiple>FALSE</var_multiple>
+		<var_options>
+            <option>
+                <option_code>1</option_code>
+                <option_desc_SWE>Mycket god</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>2</option_code>
+                <option_desc_SWE>God</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>3</option_code>
+                <option_desc_SWE>Mellan</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>4</option_code>
+                <option_desc_SWE>Dålig</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>5</option_code>
+                <option_desc_SWE>Mycket dålig</option_desc_SWE>
+            </option>
+        </var_options>
+        <var_ui_type>dropdown</var_ui_type>
+	</variable>
+    <variable>
+		<var_name>stress</var_name>
+		<var_desc_SWE>Hur ofta känner du dig stressad?</var_desc_SWE>
+		<var_type>INTEGER</var_type>
+		<var_multiple>FALSE</var_multiple>
+		<var_options>
+            <option>
+                <option_code>1</option_code>
+                <option_desc_SWE>Alltid</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>2</option_code>
+                <option_desc_SWE>Nästan alltid</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>3</option_code>
+                <option_desc_SWE>Ibland</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>4</option_code>
+                <option_desc_SWE>Sällan</option_desc_SWE>
+            </option>
+            <option>
+                <option_code>5</option_code>
+                <option_desc_SWE>Aldrig</option_desc_SWE>
+            </option>
+        </var_options>
+        <var_ui_type>dropdown</var_ui_type>
+	</variable>
+</userTable>

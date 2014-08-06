@@ -1,6 +1,4 @@
 #footer{
-	position: absolute;
-	bottom: 0;
 	width: 100%;
 	height: 60px;
 	background-color: #f5f5f5;
@@ -11,6 +9,7 @@
 	background: #38547d;
 }
 */
+
 #btn-logout{
 	float: right;
 }
@@ -31,5 +30,13 @@
 
 #status_holder{
 	display: inline-block;
+}
+
+#registration-msg{
+	color: #20D600;
+}
+
+#successful-registation-container{
+	visibility: hidden;
 }
 

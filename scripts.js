@@ -8,33 +8,6 @@ $(document).ready(function(){
 
 /*
 function login(){
-	
-	var e = _("email").value;
-	var p = _("password").value;
-
-	if(e == "" || p == ""){
-		$('#status').html("Du måste fylla i både email och lösenord.");
-	} 
-	else{
-		$('#btn-login').css('visibility','hidden');
-		$('#status').html("Loggar in...");
-		var ajax = ajaxObj("POST", "login.php");
-        ajax.onreadystatechange = function(){
-	        if(ajaxReturn(ajax) == true){
-	            if(ajax.responseText == "login_failed"){
-	            	$('#status').html("Inloggning misslyckad. Vänligen försök igen.");
-	            	$('#btn-login').css('display','block');
-				} 
-				else{
-					window.location = "user.php?u="+ajax.responseText;
-				}
-	        }
-        }
-        ajax.send("email="+e+"&password="+p);
-	}
-}
-*/
-function login(){
 
 	var xmlhttp = null;
 
@@ -77,17 +50,12 @@ function login(){
 	else{
 		alert("Failed to create AJAX object!");
 	}
-	
-	/*
-	xmlhttp.open("POST","set_session.php",true);
-	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-	xmlhttp.send("email=tmpuser@liu.se&password=pwd123");
-	*/
 }
+*/
 
 $('#btn-login').click(function(){
 
-	//Get entered data from the login from and serialize it into post parameter data
+	//Get entered data from the login form and serialize it into post parameter data
 
 	//Get data from login form
 	var email = $('#email_input').val();
@@ -135,6 +103,66 @@ $('#btn-login').click(function(){
 
 $('#btn-logout').click(function(){
 	window.location = "logout.php";
+});
+
+$('#btn-register').click(function(){
+
+	//Get data from the register form
+	var email = $('#email_input').val();
+	var password = $('#password_input').val();
+	var password_repeat = $('#password_input_repeat').val();
+
+	//Check for empty input values
+	if(email==""||password==""||password_repeat==""){
+		$('#status').html("Du måste fylla i både email och lösenord.");
+		$('#status').css('color','red');
+	}
+	else if(password != password_repeat){
+		$('#status').html("Lösenordet och det upprepade lösenordet stämmer ej överrens. Vänligen kontrollera detta en gång till.");
+		$('#status').css('color','red');
+	}
+	else{
+		//Serialize the form filed into post parameter data
+		var fromData = $('#form-register').serialize();
+
+		//Make the form buttons invisible
+		$(this).css('visibility','hidden');
+		$('#btn-cancel-registration').css('visibility', 'hidden');
+
+		//Set status field text and color
+		$('#status').html('Registrerar...');
+		$('#status').css('color','black');
+
+		//Show the content loader
+		$('#loader').css('visibility','visible');
+
+		//Send post request using ajax
+		$.post("php_includes/register_user.php",
+	    fromData,
+	    function(response, status){
+	    	//Callback function when the data is recieved
+	    	$('#loader').css('visibility','hidden');
+
+	    	//Check for login failure response
+	    	if(response != 'register_successful'){
+	    		//If the regisration was unsuccessful, show error message. 
+	    		var error_msg  = response;
+	    		$('#status').html(error_msg);
+	    		$('#status').css('color','red');
+	    		$('#btn-register').css('visibility','visible');
+	    		$('#btn-cancel-registration').css('visibility', 'visible');
+	    	}
+	    	else{
+	    		//If the registration was successful, show container for successful registrations. 
+	    		$('#form-register').css('visibility', 'hidden');
+	    		$('#successful-registation-container').css('visibility', 'visible');
+	    		//Go to top of page
+	    		$('html, body').animate({ scrollTop: 0 }, 0);
+	    	}
+	    });
+
+	}
+
 });
 
 function setStatusDescription(description){

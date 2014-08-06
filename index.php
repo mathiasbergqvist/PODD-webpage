@@ -14,6 +14,8 @@
 
     <title>PODD - Protable diary data collection</title>
 
+    <!-- Include function for reading xml files. -->
+    <script src="loadxmldoc.js"></script>
 
     <!--Include the jQuery scripts-->
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -30,7 +32,6 @@
 
     <!-- Bootstrap - Latest compiled and minified JavaScript -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
   </head>
 
   <body>
