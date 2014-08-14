@@ -1,14 +1,19 @@
 <?php
   if(loggedin()){
-    header("location: index.php?site=profile&user=".$_SESSION["email"]);
+    header("location: index.php?site=profile&user=".$_SESSION["name"]);
   }
 ?>
 
 <h2>PODD - Portable Diary Data Collection </h2>
 <p>PODD är ett system som samlar in aktiviteter i from av dagboksdata med hjälp av en applikation utvevklad för mobila enheter. Systemet tillhandahåller en effektivt, användarvänlig och lättåtkomlig plattform för dataregistrering.</p>
-<a href="index.php?site=register" class="btn btn-primary btn-lg btn-block">Registrera användare</a>
-<a href="index.php?site=login" class="btn btn-primary btn-lg btn-block">Logga in</a>
 
+<div id="home-btngroup">
+    <a href="index.php?site=register" class="btn btn-primary btn-lg">Registrera användare</a>
+    <br>
+    <br>
+    <a href="index.php?site=login" class="btn btn-primary btn-lg">Logga in</a>
+</div>
+<br>
 <br>
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">

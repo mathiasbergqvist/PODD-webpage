@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="images/ic_main_logo.png">
+    <link rel="shortcut icon" href="images/ic_small_logo.png">
 
     <title>PODD - Protable diary data collection</title>
 
@@ -42,7 +42,7 @@
       <div id="main_navbar" class="navbar navbar-inverse" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="index.php?site=home"><img src="images/ic_main_logo.png" class="img-responsive" alt="Responsive image"></a>
+            <a id="podd-logo" class="navbar-brand" href="index.php?site=home"><img src="images/ic_main_logo.png" class="img-responsive" alt="Responsive image"></a>
           </div>
           
           <?php
@@ -68,7 +68,7 @@
         <div id="body">
 
           <?php
-            $subpages = array("home", "login", "register", "profile", "info");
+            $subpages = array("home", "login", "register", "profile", "info", "edit_profile");
             if(isset($_GET['site'] ) and in_array($_GET['site'], $subpages))
             {
               include($_GET['site'] . ".php");
@@ -85,7 +85,7 @@
     </div> <!-- /container -->
 
     <div id="footer">
-      <div class="container">
+      <div id="footer-content" class="container">
         <p class="text-muted">PODD är utvecklad av avdelningen för <a href="http://www.itn.liu.se/mit?l=sv">Medie- och Informationsteknik - MIT</a> vid Linköpings Universitet.</p>
       </div>
     </div>

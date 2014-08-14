@@ -20,7 +20,11 @@
     <label for="textInput">
       Välj lösenord
     </label>
-    <input id="password_input" type="password" class="form-control" name="password" placeholder="Lösenord" onfocus="emptyElement('status')"  required>
+    <br>
+    <div id="pwd-container">
+      <input id="password_input" type="password" class="form-control" name="password" placeholder="Lösenord" onfocus="emptyElement('status')"  required>
+      <div id="pwd-msg"></div>
+    </div>
   </div>
   <div class="form-group">
     <label for="textInput">
@@ -104,7 +108,7 @@
           break;
         case spincontrol:
           document.write("<br>");
-          document.write("<input type='number' name='"+name+"' min='0' max='50' required>");
+          document.write("<input type='number' name='"+name+"' value='0' min='0' max='50' required>");
           break;
         default:
       }
@@ -114,33 +118,8 @@
     }
     
   </script>
-  <div id="status_holder"><p id="status"></p><img id="loader" src="images/ajax-loader.gif" alt="some_text"></div><br>
+  <div id="status_holder"><p id="status"></p><img id="loader" src="images/ajax-loader.gif" alt="loader"></div><br>
   <button id="btn-register" type="submit" class="btn btn-primary">Registrera konto</button>
   <button id="btn-cancel-registration" type="button" class="btn btn-primary" onclick="window.location='index.php?site=home'">Avbryt</button>
 
 </form>
-
-
-<!--
-<form role="form">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" id="exampleInputFile">
-    <p class="help-block">Example block-level help text here.</p>
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Check me out
-    </label>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
--->

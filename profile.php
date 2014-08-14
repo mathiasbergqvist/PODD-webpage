@@ -38,6 +38,7 @@
 				}
 				else{
 
+					//Get all user credentials
 					$email = $json->{'email'};
 					$name = $json->{'name'};
 					$genderID = $json->{'genderID'};
@@ -55,24 +56,77 @@
 					$health = $json->{'health'};
 					$stress = $json->{'stress'};
 
-					echo "<h3>$name</h3>";
-					echo "<strong>Email:</strong> $email <br>";
-					echo "<strong>genderID:</strong> $genderID <br>";
-					echo "<strong>birthyear:</strong> $birthyear <br>";
-					echo "<strong>regioncode:</strong> $regioncode <br>";
-					echo "<strong>adultnum:</strong> $adultnum <br>";
-					echo "<strong>childnum:</strong> $childnum <br>";
-					echo "<strong>smallchildren:</strong> $smallchildren <br>";
-					echo "<strong>accomodation:</strong> $accomodation <br>";
-					echo "<strong>roomnum:</strong> $roomnum <br>";
-					echo "<strong>vehicleavailable:</strong> $vehicleavailable <br>";
-					echo "<strong>education:</strong> $education <br>";
-					echo "<strong>occupation:</strong> $occupation <br>";
-					echo "<strong>workinghours:</strong> $workinghours <br>";
-					echo "<strong>health:</strong> $health <br>";
-					echo "<strong>stress:</strong> $stress <br><br>";
+					echo "<h3 id='name_header'>$name</h3>";
+					echo "<strong id='email'>Email</strong><div id='email_value'>$email</div><br>";
+					echo "<strong id='genderID'></strong><div id='genderID_value'>$genderID</div><br>";
+					echo "<strong id='birthyear'></strong><div id='birthyear_value'>$birthyear</div><br>";
+					echo "<strong id='regioncode'></strong><div id='regioncode_value'>$regioncode</div><br>";
+					echo "<strong id='adultnum'></strong><div id='adultnum_value'>$adultnum</div><br>";
+					echo "<strong id='childnum'></strong><div id='childnum_value'>$childnum</div><br>";
+					echo "<strong id='smallchildren'></strong><div id='smallchildren_value'>$smallchildren</div><br>";
+					echo "<strong id='accomodation'></strong><div id='accomodation_value'>$accomodation</div><br>";
+					echo "<strong id='roomnum'></strong><div id='roomnum_value'>$roomnum</div><br>";
+					echo "<strong id='vehicleavailable'></strong><div id='vehicleavailable_value'>$vehicleavailable</div><br>";
+					echo "<strong id='education'></strong><div id='education_value'>$education</div><br>";
+					echo "<strong id='occupation'></strong><div id='occupation_value'>$occupation</div><br>";
+					echo "<strong id='workinghours'></strong><div id='workinghours_value'>$workinghours</div><br>";
+					echo "<strong id='health'></strong><div id='health_value'>$health</div><br>";
+					echo "<strong id='stress'></strong><div id='stress_value'>$stress</div><br>";
 
-					echo "<button id='btn-user-edit' type='button' class='btn btn-primary'>Redigera</button>";
+					?>
+
+					<script>
+
+						//The script builds the user page structure from the xml file structure
+					    var xmlDoc = loadXMLDoc("userTable.xml");
+
+					    //XML tag list
+					    var variables = xmlDoc.getElementsByTagName("variable");
+					    var variables_desc_SWE = xmlDoc.getElementsByTagName("var_desc_SWE");
+					    var variables_name = xmlDoc.getElementsByTagName("var_name");
+					    var variables_options = xmlDoc.getElementsByTagName("var_options");
+					    var variables_ui_type = xmlDoc.getElementsByTagName("var_ui_type");
+
+					    for(var i=0; i<variables.length; i++){
+
+					    	//Get the variable description
+					      	var var_desc = variables_desc_SWE[i].childNodes[0].nodeValue;
+
+					      	//Get the variable name
+					      	var var_name = "#" + variables_name[i].childNodes[0].nodeValue;
+
+					      	//Write variable description in the corresponding div
+					      	$(var_name).html(var_desc);
+
+					      	//Get Iu type
+      						var var_ui_type = variables_ui_type[i].childNodes[0].nodeValue;
+
+      						if(var_ui_type == "dropdown" || var_ui_type == "radiobutton"){
+      							
+      							  //Get options
+						          var options = variables_options[i].getElementsByTagName("option");
+						          for(var j=0; j<options.length; j++){
+						              
+						              //Get code and description
+						              var option_code = options[j].getElementsByTagName("option_code")[0].childNodes[0].nodeValue;
+						              var option_desc = options[j].getElementsByTagName("option_desc_SWE")[0].childNodes[0].nodeValue;
+						              
+						              var code_id = var_name+"_value";
+
+						              var user_variable_code = $(code_id).text();
+
+						              if(option_code == user_variable_code){
+						              	$(code_id).html(option_desc);
+						              }
+						          }
+      						}
+					    }
+
+					</script>
+
+					<button id="btn-user-edit" type="button" class="btn btn-primary">Redigera profil</button>
+
+					<?php
 				}
 			}
 			else{
@@ -88,3 +142,5 @@
 		exit();
 	}
 ?>
+
+
